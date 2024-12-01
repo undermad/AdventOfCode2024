@@ -9,6 +9,7 @@ public class Main
     public static void main(String[] args)
     {
         Day day01 = new Day01(Path.of(".\\src\\main\\resources\\day01.txt"));
-        day01.solve();
+        day01.solvePartOne();
+        day01.solvePartTwo();
     }
 }

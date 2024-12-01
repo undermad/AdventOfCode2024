@@ -3,6 +3,7 @@ package org.example.day01;
 import org.example.Day;
 import org.example.FileParser;
 import org.example.Input;
+import org.w3c.dom.Node;
 
 import javax.swing.*;
 import java.nio.file.Path;
@@ -10,21 +11,20 @@ import java.util.*;
 
 public class Day01 implements Day
 {
-    
-    private FileParser parser;
-    private Input01 input;
+
+    private final Input01 input;
     
     public Day01(Path input)
     {
-        this.parser = new Day01FileParser();
+        FileParser parser = new Day01FileParser();
         this.input = (Input01) parser.parse(input);
     }
 
     @Override
-    public void solve()
+    public void solvePartOne()
     {
-        var right = input.right();
-        var left = input.left();
+        var right = new ArrayList<>(input.right());
+        var left = new ArrayList<>(input.left());
 
 
         Collections.sort(left);
@@ -45,7 +45,42 @@ public class Day01 implements Day
         var result = distances.stream().mapToInt(Integer::intValue).sum();
         System.out.println(result);
     }
-    
-    
-    
+
+    @Override
+    public void solvePartTwo()
+    {
+        var right = new ArrayList<>(input.right());
+        var left = new ArrayList<>(input.left());
+
+        Collections.sort(left);
+        Collections.sort(right);
+        
+        
+        var result = 0;
+        
+        for (int i = 0; i < left.size(); i++) {
+            
+            var current = left.get(i);
+            
+            int appear = 0;
+            
+            for(int j = 0; j < right.size(); j++) {
+                var rightCurrent = right.get(j);
+                if(rightCurrent > current) {
+                    break;
+                }
+                
+                if(current.equals(rightCurrent)) {
+                    appear++;
+                }
+            }
+            
+            result += current * appear;
+        }
+
+        System.out.println(result);
+        
+    }
+
+
 }

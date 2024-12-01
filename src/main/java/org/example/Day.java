@@ -2,5 +2,6 @@ package org.example;
 
 public interface Day
 {
-    void solve();
+    void solvePartOne();
+    void solvePartTwo();
 }
