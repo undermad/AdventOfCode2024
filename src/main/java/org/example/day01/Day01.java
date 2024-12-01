@@ -49,12 +49,8 @@ public class Day01 implements Day
     @Override
     public void solvePartTwo()
     {
-        var right = new ArrayList<>(input.right());
-        var left = new ArrayList<>(input.left());
-
-        Collections.sort(left);
-        Collections.sort(right);
-        
+        var right = input.right();
+        var left = input.left();
         
         var result = 0;
         
@@ -66,9 +62,6 @@ public class Day01 implements Day
             
             for(int j = 0; j < right.size(); j++) {
                 var rightCurrent = right.get(j);
-                if(rightCurrent > current) {
-                    break;
-                }
                 
                 if(current.equals(rightCurrent)) {
                     appear++;
