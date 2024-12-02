@@ -23,7 +23,7 @@ public class Day02 implements Day
     {
         var safeReports = input.reports()
                 .stream()
-                .filter(Report::isValid)
+                .filter(report -> report.isValid(report.codes()))
                 .toList()
                 .size();
         System.out.println(safeReports);
@@ -32,6 +32,11 @@ public class Day02 implements Day
     @Override
     public void solvePartTwo()
     {
-
+        var safeReports = input.reports()
+                .stream()
+                .filter(Report::isSuperValid)
+                .toList()
+                .size();
+        System.out.println(safeReports);
     }
 }

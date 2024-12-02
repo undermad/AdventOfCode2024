@@ -17,5 +17,6 @@ public class Main
         
         Day day02 = new Day02(Path.of(".\\src\\main\\resources\\day02.txt"));
         day02.solvePartOne();
+        day02.solvePartTwo();
     }
 }
