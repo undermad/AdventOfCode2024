@@ -1,6 +1,6 @@
 package org.example.day01;
 
-import org.example.Input;
+import org.example.blocks.Input;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,8 @@
 package org.example.day01;
 
-import org.example.Day;
-import org.example.FileParser;
-import org.example.Input;
-import org.w3c.dom.Node;
+import org.example.blocks.Day;
+import org.example.blocks.FileParser;
 
-import javax.swing.*;
 import java.nio.file.Path;
 import java.util.*;
 

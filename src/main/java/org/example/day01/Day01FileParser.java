@@ -1,7 +1,7 @@
 package org.example.day01;
 
-import org.example.FileParser;
-import org.example.Input;
+import org.example.blocks.FileParser;
+import org.example.blocks.Input;
 
 import java.io.IOException;
 import java.nio.file.Files;
