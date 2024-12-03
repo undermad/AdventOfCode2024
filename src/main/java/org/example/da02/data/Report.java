@@ -3,7 +3,7 @@ package org.example.da02.data;
 import java.util.LinkedList;
 import java.util.List;
 
-public record Report(LinkedList<Integer> codes, Direction initialDirection)
+public record Report(LinkedList<Integer> codes)
 {
 
 
@@ -16,7 +16,7 @@ public record Report(LinkedList<Integer> codes, Direction initialDirection)
             code.add(Integer.valueOf(choppedLine[i]));
         }
 
-        return new Report(code, checkDirection(code, 0, 1));
+        return new Report(code);
     }
 
     public boolean isSuperValid()
@@ -84,7 +84,7 @@ public record Report(LinkedList<Integer> codes, Direction initialDirection)
     }
 
 
-    private static Direction checkDirection(LinkedList<Integer> codes, int firstIndex, int secondIndex)
+    private Direction checkDirection(LinkedList<Integer> codes, int firstIndex, int secondIndex)
     {
         var first = codes.get(firstIndex);
         var second = codes.get(secondIndex);
