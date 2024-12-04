@@ -30,22 +30,65 @@ public class Day04 implements Day
     @Override
     public void solvePartTwo()
     {
+        int count = 0;
 
+        for (int h = 1; h < input.input().length - 1; h++) {
+            for (int w = 1; w < input.input()[0].length - 1; w++) {
+                count += isXmas(h, w) ? 1 : 0;
+            }
+        }
+        System.out.println(count);
     }
-    
-    private int calculateSecondaryDiag() {
+
+    public boolean isXmas(int h, int w)
+    {
+        if (input.input()[h][w] != 'A') return false;
+
+        var i = input.input();
+
+
+        var masOne = new char[3];
+        var masTwo = new char[3];
+
+        // x x x
+        // x x x
+        // x x x
+
+
+        masOne[0] = i[h - 1][w - 1];
+        masOne[1] = i[h][w];
+        masOne[2] = i[h + 1][w + 1];
+
+        masTwo[0] = i[h + 1][w - 1];
+        masTwo[1] = i[h][w];
+        masTwo[2] = i[h - 1][w + 1];
+
+        var regex = "^MAS";
+
+        var firstMatch = String.valueOf(masOne).matches(regex) || new StringBuilder(String.valueOf(masOne))
+                .reverse().toString().matches(regex);
+        var secondMatch = String.valueOf(masTwo).matches(regex) || new StringBuilder(String.valueOf(masTwo))
+                .reverse().toString().matches(regex);
+
+
+        return firstMatch && secondMatch;
+    }
+
+
+    private int calculateSecondaryDiag()
+    {
         var count = 0;
-        
-        for(int i = 0; i < input.input().length; i++) {
+
+        for (int i = 0; i < input.input().length; i++) {
             var line = input.getVerticalSecondaryDiag(i);
             count += calculateTwoDirectionXMAS(line);
         }
-        
-        for(int i = input.input().length - 2; i >= 0; i--) {
+
+        for (int i = input.input().length - 2; i >= 0; i--) {
             var line = input.getHorizontalSecondaryDiag(i);
             count += calculateTwoDirectionXMAS(line);
         }
-        
+
         return count;
     }
 
