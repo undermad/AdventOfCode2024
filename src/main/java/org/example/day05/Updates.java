@@ -2,6 +2,6 @@ package org.example.day05;
 
 import java.util.List;
 
-public record Update(List<int[]> updates)
+public record Updates(List<int[]> updates)
 {
 }

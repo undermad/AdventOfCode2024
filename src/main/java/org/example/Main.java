@@ -5,6 +5,7 @@ import org.example.da02.Day02;
 import org.example.day01.Day01;
 import org.example.day03.Day03;
 import org.example.day04.Day04;
+import org.example.day05.Day05;
 
 import java.nio.file.Path;
 
@@ -25,8 +26,13 @@ public class Main
 //        day03.solvePartOne();
 //        day03.solvePartTwo();
         
-        Day day04 = new Day04(Path.of(".\\src\\main\\resources\\day04.txt"));
-        day04.solvePartOne();
-        day04.solvePartTwo();
+//        Day day04 = new Day04(Path.of(".\\src\\main\\resources\\day04.txt"));
+//        day04.solvePartOne();
+//        day04.solvePartTwo();
+
+        Day day05 = new Day05(Path.of(".\\src\\main\\resources\\day05.txt"));
+        day05.solvePartOne();
+        day05.solvePartTwo();
+    
     }
 }
