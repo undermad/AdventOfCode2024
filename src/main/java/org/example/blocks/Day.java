@@ -1,7 +1,9 @@
 package org.example.blocks;
 
+import java.io.IOException;
+
 public interface Day
 {
     void solvePartOne();
-    void solvePartTwo();
+    void solvePartTwo() throws IOException;
 }

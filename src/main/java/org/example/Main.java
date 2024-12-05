@@ -7,11 +7,12 @@ import org.example.day03.Day03;
 import org.example.day04.Day04;
 import org.example.day05.Day05;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
 //        Day day01 = new Day01(Path.of(".\\src\\main\\resources\\day01.txt"));
 //        day01.solvePartOne();
